@@ -9,6 +9,8 @@
     <style>
       :root {
         font-family: monospace;
+        background: #6c7e82;
+        color: #e1fced;
       }
       body {
         display: flex;
@@ -25,7 +27,7 @@
         margin: 1em;
         text-align: center;
         padding-bottom: 1em;
-        border-bottom: 1px solid black;
+        border-bottom: 1px solid #e1fced;
       }
       header h2 {
         text-align: center;
@@ -49,7 +51,7 @@
         top: 0;
         left: 0;
         color: white;
-        background: darkred;
+        background: #8c4f4f;
         display: flex;
         justify-content: center;
         align-items: center;
@@ -65,7 +67,16 @@
       }
       #needle .needle {
         font-size: 3em;
+        display: inline-flex;
+        height: 3ex;
+        width: 3ex;
+        border-radius: 10em;
+        background: #e1fced;
+        color: #6c7e82;
         position: relative;
+        justify-content: center;
+        align-items: center;
+        box-shadow: #394f4f 0ex 0.1ex 0.5ex;
       }
       #compass {
         font-size: 4em;
@@ -76,7 +87,7 @@
         display: inline-flex;
         height: 100%;
         width: 100vw;
-        background: #607460;
+        background: #77bca5;
         color: white;
         align-items: center;
         justify-content: center;
@@ -93,11 +104,11 @@
         top: 0;
       }
       #compass #north::before {
-        background: linear-gradient(90deg, rgba(255,255,255,1) 0%, rgba(96,116,96,1) 100%);
+        background: linear-gradient(90deg, rgba(255,255,255,1) 0%, #77bca5 100%);
         right: 100%;
       }
       #compass #north::after {
-        background: linear-gradient(90deg, rgba(96,116,96,1) 0%, rgba(255,255,255,1) 100%);
+        background: linear-gradient(90deg, #77bca5 0%, rgba(255,255,255,1) 100%);
         left: 100%;
       }
     </style>
