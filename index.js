@@ -33,6 +33,6 @@ function onAnimation () {
 
   console.log('needle', needle)
 
-  needle.style.transform = `rotateZ(${decay}deg)`
+  needle.style.transform = `rotateZ(${-decay}deg)`
 }
 
