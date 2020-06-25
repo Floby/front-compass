@@ -8,7 +8,7 @@ var attitude = randomStart
 window.addEventListener("deviceorientation", onDeviceOrientation, true)
 
 function onDeviceOrientation (e) {
-  if (e.alpha === null) {
+  if (e.alpha === null && !window.location.search.includes('force')) {
     mainElement.classList.add('incompatible')
     return
   }
