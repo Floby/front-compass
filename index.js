@@ -14,7 +14,6 @@ function onDeviceOrientation (e) {
   }
   const alpha = 0 + (e.alpha || 0)
   attitude = alpha % 360;
-  debug({ attitude })
   window.requestAnimationFrame(onAnimation)
 }
 
