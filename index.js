@@ -2,10 +2,11 @@ const randomStart = Math.floor(Math.random() * 360)
 const debugElement = document.getElementById('debug')
 const compassElement = document.getElementById('compass')
 const northElement = document.getElementById('north')
+const needle = document.querySelector('#needle .needle')
 var attitude = randomStart
 
 function debug (obj) {
-  debugElement.innerText = JSON.stringify(obj, null, '  ')
+  // debugElement.innerText = JSON.stringify(obj, null, '  ')
 }
 
 
@@ -29,5 +30,9 @@ function onAnimation () {
 
   const offset = decay * (RANGE / 180) * -1
   northElement.style.left = `${offset}px`
+
+  console.log('needle', needle)
+
+  needle.style.transform = `rotateZ(${decay}deg)`
 }
 

@@ -10,6 +10,43 @@
       :root {
         font-family: monospace;
       }
+      body {
+        display: flex;
+        height: 100vh;
+        flex-direction: column;
+      }
+      header {
+        flex-grow: 0;
+        flex-shrink: 0;
+      }
+      header h1 {
+        font-size: 3em;
+        margin: 1em;
+        text-align: center;
+        padding-bottom: 1em;
+        border-bottom: 1px solid black;
+      }
+      header h2 {
+        text-align: center;
+        font-size: 1em;
+        font-style: italic;
+      }
+
+      main {
+        flex-grow: 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+      }
+      #needle {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+      }
+      #needle .needle {
+        font-size: 3em;
+        position: relative;
+      }
       #compass {
         font-size: 4em;
         height: 2em;
@@ -28,12 +65,20 @@
     </style>
   </head>
   <body>
-    <pre id="debug"></pre>
-    <div id="compass">
-      <div id="north">
-        <p>Ember.js</p>
+    <header>
+      <h1>Boussole Front</h1>
+      <h2>Vers quel framework web s'orienter?</h2>
+    </header>
+    <main>
+      <div id="needle">
+        <span class="needle">ᐱ</span>
       </div>
-    </div>
+      <div id="compass">
+        <div id="north">
+          <p>Ember.js</p>
+        </div>
+      </div>
+    </main>
    <script type="text/javascript" src="index.js"></script>
   </body>
 </html>
