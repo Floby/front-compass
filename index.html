@@ -31,6 +31,7 @@
         text-align: center;
         font-size: 1em;
         font-style: italic;
+        margin-bottom: 1em;
       }
 
       main {
@@ -38,6 +39,24 @@
         display: flex;
         flex-direction: column;
         justify-content: space-evenly;
+        position: relative;
+      }
+      main.incompatible::after {
+        content: 'Consultez ce site depuis un smartphone';
+        height: 100%;
+        width: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        color: white;
+        background: darkred;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 2em;
+        padding: 1em;
+        box-sizing: border-box;
+        text-align: center;
       }
       #needle {
         display: flex;

@@ -1,5 +1,6 @@
 const randomStart = Math.floor(Math.random() * 360)
 const debugElement = document.getElementById('debug')
+const mainElement = document.querySelector('main')
 const compassElement = document.getElementById('compass')
 const northElement = document.getElementById('north')
 const needle = document.querySelector('#needle .needle')
@@ -13,6 +14,9 @@ function debug (obj) {
 window.addEventListener("deviceorientation", onDeviceOrientation, true)
 
 function onDeviceOrientation (e) {
+  if (e.alpha === null) {
+    mainElement.classList.add('incompatible')
+  }
   const alpha = 0 + (e.alpha || 0)
   attitude = alpha % 360;
   debug({ attitude })
