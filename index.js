@@ -27,7 +27,7 @@ function onAnimation () {
   const RANGE = document.body.clientWidth * 2
   console.log('RANGE', RANGE)
 
-  const offset = decay * (RANGE / 180)
-  northElement.style.right = `${offset}px`
+  const offset = decay * (RANGE / 180) * -1
+  northElement.style.left = `${offset}px`
 }
 
