@@ -1,7 +1,8 @@
 const randomStart = Math.floor(Math.random() * 360)
 const debugElement = document.getElementById('debug')
 const compassElement = document.getElementById('compass')
-let attitude = randomStart
+const northElement = document.getElementById('north')
+var attitude = randomStart
 
 function debug (obj) {
   debugElement.innerText = JSON.stringify(obj, null, '  ')
@@ -11,9 +12,22 @@ function debug (obj) {
 window.addEventListener("deviceorientation", onDeviceOrientation, true)
 
 function onDeviceOrientation (e) {
-  console.log('e', e)
-  const { alpha, beta, gamma } = e
-  debug({ alpha, beta, gamma })
-  attitude = randomStart + (alpha || 0)
+  const alpha = 0 + (e.alpha || 0)
+  attitude = alpha % 360;
   debug({ attitude })
+  window.requestAnimationFrame(onAnimation)
 }
+
+function onAnimation () {
+  console.log('attitude', attitude)
+
+  const decay = (180 - ((180+attitude)%360))
+  console.log('decay', decay)
+
+  const RANGE = document.body.clientWidth * 2
+  console.log('RANGE', RANGE)
+
+  const offset = decay * (RANGE / 180)
+  northElement.style.left = `${offset}px`
+}
+
