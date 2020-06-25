@@ -28,6 +28,6 @@ function onAnimation () {
   console.log('RANGE', RANGE)
 
   const offset = decay * (RANGE / 180)
-  northElement.style.left = `${offset}px`
+  northElement.style.right = `${offset}px`
 }
 
