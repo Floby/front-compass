@@ -14,6 +14,7 @@
         display: flex;
         height: 100vh;
         flex-direction: column;
+        overflow-x: hidden;
       }
       header {
         flex-grow: 0;
@@ -50,17 +51,34 @@
       #compass {
         font-size: 4em;
         height: 2em;
-        background-color: lightgreen;
       }
       #compass #north {
         display: inline-flex;
         height: 100%;
         width: 100vw;
-        background: white;
+        background: #607460;
+        color: white;
         align-items: center;
         justify-content: center;
         position: relative;
         left: 0;
+      }
+      #compass #north::before ,
+      #compass #north::after {
+        content: '';
+        display: block;
+        position: absolute;
+        height: 100%;
+        width: 300vw;
+        top: 0;
+      }
+      #compass #north::before {
+        background: linear-gradient(90deg, rgba(255,255,255,1) 0%, rgba(96,116,96,1) 100%);
+        right: 100%;
+      }
+      #compass #north::after {
+        background: linear-gradient(90deg, rgba(96,116,96,1) 0%, rgba(255,255,255,1) 100%);
+        left: 100%;
       }
     </style>
   </head>
